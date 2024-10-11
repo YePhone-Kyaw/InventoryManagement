@@ -3,36 +3,27 @@
 @tailwind utilities;
 
 :root {
-  background-color: white;
-  color: slate-950;
+  --background: theme('colors.white');
+  --foreground: theme('colors.slate.950');
 
   &.dark {
-    background-color: slate-950;
-    color: slate-100;
-  };
+    --background: theme('colors.slate.950');
+    --foreground: theme('colors.slate.100');
+  }
 }
 
 .toggle-button {
-  border-radius: 999px;
-  background-color: purple-500;
-  padding: 0.75rem;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  margin: auto;
-  cursor: pointer;
+  @apply rounded-full bg-purple-500 p-3 border-none flex items-center justify-center w-auto mx-auto cursor-pointer;
  
   &:hover {
-    background-color: purple-400;
+    @apply bg-purple-400;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not(.light) {
+    --background: theme('colors.slate.950');
+    --foreground: theme('colors.slate.100');
   }
 }
 
