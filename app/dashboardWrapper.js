@@ -12,12 +12,14 @@ function DashboardLayout({children}){
     const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
 
     useEffect(() => {
-        if(isDarkMode) {
+        if (isDarkMode) {
             document.documentElement.classList.add("dark");
+            document.documentElement.classList.remove("light");
         } else {
             document.documentElement.classList.add("light");
+            document.documentElement.classList.remove("dark");
         }
-    });
+    }, [isDarkMode]); 
 
     return (
         <div className={`${isDarkMode ? "dark" : "light"} flex bg-gray-50 text-gray-900 w-full min-h-screen`}>

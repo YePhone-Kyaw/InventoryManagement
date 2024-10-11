@@ -54,19 +54,18 @@ export default function SideBar() {
               isSidebarCollapsed ? "px-5" : "px-8"
             }`}
           >
-            <image
-              src="https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/logo.png"
-              alt="edstock-logo"
+            {/* <image
+              src=""
               width={27}
               height={27}
               className="rounded w-8"
-            />
+            /> */}
             <h1
               className={`${
                 isSidebarCollapsed ? "hidden" : "block"
               } font-extrabold text-2xl`}
             >
-              EDSTOCK
+              Inventory Management
             </h1>
     
             <button
@@ -104,9 +103,9 @@ export default function SideBar() {
               isCollapsed={isSidebarCollapsed}
             />
             <SidebarLink
-              href="/settings"
+              href="/setting"
               icon={SlidersHorizontal}
-              label="Settings"
+              label="Setting"
               isCollapsed={isSidebarCollapsed}
             />
             <SidebarLink
@@ -119,7 +118,7 @@ export default function SideBar() {
     
           {/* FOOTER */}
           <div className={`${isSidebarCollapsed ? "hidden" : "block"} mb-10`}>
-            <p className="text-center text-xs text-gray-500">&copy; 2024 Edstock</p>
+            <p className="text-center text-xs text-gray-500">&copy; 2024 Inventory Management</p>
           </div>
         </div>
       );
