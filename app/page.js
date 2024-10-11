@@ -1,9 +1,10 @@
 import Image from "next/image";
+import SideBar from "./_components/sidebar";
 
 export default function Home() {
   return (
     <>
-    <p className='text-center'>Hello World</p>
+    <SideBar />
     </>
   );
 }
